@@ -246,11 +246,11 @@ void MEM(){
 
     // decrement wait_cycles and check if have to wait more
     if ((state.mem_wait_cycles = std::max(state.mem_wait_cycles - 1, 0)) > 0){ // still blocked
-        state.ex_mem_stage.block = false;
-        state.id_ex_stage.block = false;
-        state.if_id_stage.block = false;
         return;
     }
+    state.ex_mem_stage.block = false;
+    state.id_ex_stage.block = false;
+    state.if_id_stage.block = false;
 
     uint32_t op = state.ex_mem_stage.decodedInst.op;
     uint32_t rt = state.ex_mem_stage.decodedInst.rt;
