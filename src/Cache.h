@@ -90,7 +90,7 @@ public:
         uint32_t tag, index, offset;
         tag = getTag(addr);
         index = getIndex(addr);
-        offset = getOffset(offset);
+        offset = getOffset(addr);
 
         // go to cache[index] and find correspoding tag
         value = 0;
